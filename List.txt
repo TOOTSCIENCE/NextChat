@@ -1,0 +1,31 @@
+https://github.com/Qiang-Pan/mynextweb
+https://github.com/ChatGPTNextWeb/NextChat
+
+
+open folder in vs and run following cmds in terminal:
+
+1. yarn install or npm install
+
+to use China mirror site
+create ".npmrc" or ".yarnrc" file and add line "registry=https://registry.npmmirror.com/" into it
+
+if has error on install, open package.json file, remove line of rt-client, manually download package from "https://github.com/Azure-Samples/aoai-realtime-audio-sdk/", and run npm add ./rt-client-0.5.0.tgz
+
+2. run yarn dev to run and debug project
+
+3. debug in vs, create launch.json and paste following code into it:
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Yarn dev",
+            "runtimeExecutable": "yarn",
+            "runtimeArgs": [
+                "dev"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}
